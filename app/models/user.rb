@@ -4,30 +4,40 @@ class User < ActiveRecord::Base
     email_address.split('@')[1]
   end
 
-  def determine_pattern(email_address)
-    localpart_array = email_address.split('@')[0].split('.')
-    fname_length = localpart_array[0].length
-    lname_length = localpart_array[1].length
+  def hashify_info(email_address, name)
+    return {
+      fname: name.downcase.split(' ')[0],
+      lname: name.downcase.split(' ')[1],
+      finit: name.downcase.split(' ')[0][0],
+      linit: name.downcase.split(' ')[1][0],
+      fname_email: email_address.split('@')[0].split('.')[0],
+      lname_email: email_address.split('@')[0].split('.')[1]
+    }
+  end
+
+  def determine_pattern(email_address, name)
+    hash = hashify_info(email_address, name)
     case
-    when fname_length == 1 && lname_length == 1
+    when hash[:fname_email] == hash[:finit] && hash[:lname_email] == hash[:linit]
       return 'first_initial_dot_last_initial'
-    when fname_length == 1 && lname_length > 1
+    when hash[:fname_email] == hash[:finit] && hash[:lname_email] == hash[:lname]
       return 'first_initial_dot_last_name'
-    when fname_length > 1 && lname_length == 1
+    when hash[:fname_email] == hash[:fname] && hash[:lname_email] == hash[:linit]
       return 'first_name_dot_last_initial'
-    when fname_length > 1 && lname_length > 1
+    when hash[:fname_email] == hash[:fname] && hash[:lname_email] == hash[:lname]
       return 'first_name_dot_last_name'
     else
       return nil
     end
   end
 
-
-
+  def self.find_patterns(company_url)
+    pattern_array = User.where(company_url: company_url).pluck(:email_pattern)
+    if pattern_array.empty?
+      return [nil]
+    else
+      return pattern_array
+    end
+  end
 
 end
-
-# first_name_dot_last_name: "john.ferguson@alphasights.com"
-# first_name_dot_last_initial: "john.f@alphasights.com"
-# first_initial_dot_last_name: "j.ferguson@alphasights.com"
-# first_initial_dot_last_initial: "j.f@alphasights.com"
