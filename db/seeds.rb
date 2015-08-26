@@ -1,3 +1,4 @@
+require_relative '../app/models/user'
 def determine_url(email_address)
   email_address.split('@')[1]
 end
