@@ -34,8 +34,8 @@ helpers do
     v_hash[:patterns] = []
     v_hash[:single_pattern] = true if patterns[0] != nil && patterns.length == 1
     patterns.each do |ptrn|
-      view_hash[:patterns] << predict_email(ptrn, params['user']['name'], params['user']['url'])
+      v_hash[:patterns] << predict_email(ptrn, params['user']['name'], params['user']['url'])
     end
-    view_hash
+    v_hash
   end
 end
