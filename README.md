@@ -18,7 +18,8 @@
     
 5.  now open up a browser (preferably chrome) and go to this link [http://localhost:9393/](http://localhost:9393/)
 6.  Here, you can enter in a name in the name field (ie ""Peter Wong") and a company url (ie "alphasights.com") and click the predict button.
-7.  This will generate the predicted emails.  If you get one email that means that everyone in our database with that company url follows a specific pattern. if you get multiple emails that means there are multiple patters for people in our database with that company url. Finally, if you don't get an email pattern that means we don't have any email patterns yet for people with that company url. 
+7.  This will generate the predicted emails. If you're using a browser that's enabled for javascript, you'll see the response below the prediction form. If not, you'll move to a new page to see the response (to go back to the main page, you can click the 'home' link).
+8.  If you get one email that means that everyone in our database with that company url follows a specific pattern. if you get multiple emails that means there are multiple patters for people in our database with that company url. Finally, if you don't get an email pattern that means we don't have any email patterns yet for people with that company url. 
   
 ### Design Decisions
 1.  I decided to make this a web app, since it would be easy for users to use (especially if it is hosted).
@@ -32,4 +33,3 @@
 1.  Currently, there is no way for a user to create, updated, or delete data from the database. Moving forward, it would be ncie to allow users to add more folks to our data sample.
 2.  If you only enter one name the app currently blows up, so it would be nice to account for that on the front end and back end.
 3.  Based on what data would be added in the future, it would make sense to have more models. With more data it would make sense to add a company model and other table for data that we may need to find. 
-4.  It would be nice to add an ajax call on the home page and bring the response back to the home page without refreshing.
