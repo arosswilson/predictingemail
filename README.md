@@ -5,11 +5,17 @@
 ### Steps to Use predictingemail
 1.  unzip the file in a location that you remember
 2.  open your terminal and move ('cd') into the predicting email directory and run 'bundle install'
+
     predictingemail [master] :> bundle install
+    
 3.  create, migrate and seed the database. run this:
+
     $ bundle exec rake db:create db:migrate db:seed
+    
 4.  start your server. Warning, this will run a server on port 9393 by default.
+
     $ bundle exec shotgun
+    
 5.  now open up a browser (preferably chrome) and go to this link [http://localhost:9393/](http://localhost:9393/)
 6.  Here, you can enter in a name in the name field (ie ""Peter Wong") and a company url (ie "alphasights.com") and click the predict button.
 7.  This will generate the predicted emails.  If you get one email that means that everyone in our database with that company url follows a specific pattern. if you get multiple emails that means there are multiple patters for people in our database with that company url. Finally, if you don't get an email pattern that means we don't have any email patterns yet for people with that company url.
