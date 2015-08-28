@@ -32,3 +32,4 @@
 1.  Currently, there is no way for a user to create, updated, or delete data from the database. Moving forward, it would be ncie to allow users to add more folks to our data sample.
 2.  If you only enter one name the app currently blows up, so it would be nice to account for that on the front end and back end.
 3.  Based on what data would be added in the future, it would make sense to have more models. With more data it would make sense to add a company model and other table for data that we may need to find. 
+4.  It would be nice to add an ajax call on the home page and bring the response back to the home page without refreshing.
