@@ -9,7 +9,7 @@
 1.  unzip the file in a location that you remember
 2.  open your terminal and move ('cd') into the predicting email directory and run 'bundle install'
 
-    `predictingemail [master] :> bundle install`
+    `$ bundle install`
     
 3.  create, migrate and seed the database. run this:
 
