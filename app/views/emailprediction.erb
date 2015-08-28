@@ -1,8 +1,8 @@
 <div class="container">
   <p>Predicted Email for <%= @predict_hash[:name] %> at <%= @predict_hash[:url] %> </p>
   <% if @predict_hash[:single_pattern] %>
-    <%= erb :'_single', locals: {pattern: @predict_hash[:patterns][0]} %>
+    <%= erb :'_single', locals: {address: @predict_hash[:addresses][0]} %>
   <% else %>
-    <%= erb :'_multiple', locals: {patterns: @predict_hash[:patterns]} %>
+    <%= erb :'_multiple', locals: {addresses: @predict_hash[:addresses]} %>
   <% end %>
 </div>
