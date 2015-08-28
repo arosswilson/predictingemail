@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="predictionresponse">
   <p>Predicted Email for <%= @predict_hash[:name] %> at <%= @predict_hash[:url] %> </p>
   <% if @predict_hash[:single_pattern] %>
     <%= erb :'_single', locals: {address: @predict_hash[:addresses][0]} %>
