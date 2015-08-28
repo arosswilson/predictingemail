@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
     if pattern_array.empty?
       return [nil]
     else
-      return pattern_array
+      pattern_array.uniq
     end
   end
 end
