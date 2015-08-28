@@ -18,7 +18,7 @@
     
 5.  now open up a browser (preferably chrome) and go to this link [http://localhost:9393/](http://localhost:9393/)
 6.  Here, you can enter in a name in the name field (ie ""Peter Wong") and a company url (ie "alphasights.com") and click the predict button.
-7.  This will generate the predicted emails.  If you get one email that means that everyone in our database with that company url follows a specific pattern. if you get multiple emails that means there are multiple patters for people in our database with that company url. Finally, if you don't get an email pattern that means we don't have any email patterns yet for people with that company url.
+7.  This will generate the predicted emails.  If you get one email that means that everyone in our database with that company url follows a specific pattern. if you get multiple emails that means there are multiple patters for people in our database with that company url. Finally, if you don't get an email pattern that means we don't have any email patterns yet for people with that company url. 
   
 ### Design Decisions
 1.  I decided to make this a web app, since it would be easy for users to use (especially if it is hosted).
