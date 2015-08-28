@@ -30,12 +30,12 @@ helpers do
     "#{name.split(' ')[0]}.#{name.split(' ')[1]}@#{company_url}"
   end
 
-  def collect_predicted_emails(patterns, v_hash)
-    v_hash[:patterns] = []
-    v_hash[:single_pattern] = true if patterns[0] != nil && patterns.length == 1
+  def collect_predicted_emails(patterns, view_hash)
+    view_hash[:addresses] = []
+    view_hash[:single_pattern] = true if patterns[0] != nil && patterns.length == 1
     patterns.each do |ptrn|
-      v_hash[:patterns] << predict_email(ptrn, params['user']['name'], params['user']['url'])
+      view_hash[:addresses] << predict_email(ptrn, params['user']['name'], params['user']['url'])
     end
-    v_hash
+    view_hash
   end
 end
