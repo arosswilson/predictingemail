@@ -10,7 +10,7 @@ describe 'IndexController' do
 
     it "displays homepage content" do
       get '/'
-      expect(last_response.body).to include("<form action='/emailprediction' method='post'>")
+      expect(last_response.body).to include("<form action='/emailprediction' method='post' id='emailprediction'>")
     end
   end
 
@@ -75,6 +75,12 @@ describe 'IndexController' do
       it 'should return no emails' do
         post '/emailprediction', {"user"=>{"name"=>"Barack Obama", "url"=>"whitehouse.gov"}}
         expect(last_response.body).to include('<p>Unable to find any possible patterns</p>')
+      end
+    end
+    context 'my name with alphasights url' do
+      it 'should return one email address' do
+        post '/emailprediction', {"user"=>{"name"=>"Ross Wilson", "url"=>"alphasights.com"}}
+        expect(last_response.body).to include('<p>ross.wilson@alphasights.com</p>')
       end
     end
   end
