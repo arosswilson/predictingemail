@@ -20,6 +20,17 @@
 6.  Here, you can enter in a name in the name field (ie ""Peter Wong") and a company url (ie "alphasights.com") and click the predict button.
 7.  This will generate the predicted emails. If you're using a browser that's enabled for javascript, you'll see the response below the prediction form. If not, you'll move to a new page to see the response (to go back to the main page, you can click the 'home' link).
 8.  If you get one email that means that everyone in our database with that company url follows a specific pattern. if you get multiple emails that means there are multiple patters for people in our database with that company url. Finally, if you don't get an email pattern that means we don't have any email patterns yet for people with that company url. 
+
+### Steps to Test
+1.  Go back in the terminal and into the predictingemail directory
+2.  from here prepare the test database:
+
+    $ be rake db:test:prepare
+    
+3.  now you should be able to run the tests with:
+
+    $ be rspec
+    
   
 ### Design Decisions
 1.  I decided to make this a web app, since it would be easy for users to use (especially if it is hosted).
